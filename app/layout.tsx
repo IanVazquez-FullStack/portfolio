@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Ian Vazquez",
-  description: "Full Stack / Backend Developer — portfolio in progress",
+  title: {
+    default: "Ian Vazquez — Full Stack / Backend Developer",
+    template: "%s — Ian Vazquez",
+  },
+  description:
+    "Full Stack / Backend Developer. Production-ready systems, real security, real results.",
 };
 
 export default function RootLayout({

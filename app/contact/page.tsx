@@ -1,29 +1,9 @@
 "use client";
 
-const links = [
-  {
-    label: "Work",
-    href: "/work",
-  },
-  {
-    label: "About",
-    href: "/about",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
+const contactLinks = [
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/ian-vazquez-full-stack-developer/",
-  },
-  {
-    label: "GitHub",
-    href: "https://github.com/IanVazquez-FullStack/",
-  },
-  {
-    label: "CV",
-    href: "/CV_Ian_Vazquez_2026.pdf",
   },
   {
     label: "Book a Meeting",
@@ -31,54 +11,70 @@ const links = [
   },
 ];
 
-export default function Home() {
+export default function Contact() {
   return (
     <main
       style={{
         minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "0.75rem",
         fontFamily:
           "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
         backgroundColor: "#0a0a0a",
         color: "#f5f5f5",
-        textAlign: "center",
-        padding: "2rem",
+        padding: "4rem 2rem",
+        maxWidth: "720px",
+        margin: "0 auto",
       }}
     >
-      <h1 style={{ fontSize: "2.5rem", margin: 0, letterSpacing: "0.02em" }}>
-        Ian Vazquez
-      </h1>
-      <p style={{ fontSize: "1.1rem", color: "#a1a1a1", margin: 0 }}>
-        Full Stack / Backend Developer
-      </p>
-      <nav
+      <a
+        href="/"
         style={{
-          display: "flex",
-          gap: "1rem",
-          marginTop: "2rem",
-          flexWrap: "wrap",
-          justifyContent: "center",
+          color: "#666",
+          textDecoration: "none",
+          fontSize: "0.85rem",
+          marginBottom: "3rem",
+          display: "inline-block",
         }}
       >
-        {links.map((link) => (
+        ← Home
+      </a>
+
+      <h1
+        style={{
+          fontSize: "2rem",
+          margin: "1.5rem 0 2rem",
+          fontWeight: 600,
+        }}
+      >
+        Contact
+      </h1>
+
+      <p style={{ color: "#ccc", lineHeight: 1.7, marginBottom: "2rem" }}>
+        Si estás buscando un developer que se preocupe por seguridad, testing y
+        código que funcione en producción — hablemos.
+      </p>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "1rem",
+          maxWidth: "320px",
+        }}
+      >
+        {contactLinks.map((link) => (
           <a
             key={link.label}
             href={link.href}
-            target={link.href.startsWith("http") ? "_blank" : undefined}
-            rel={
-              link.href.startsWith("http") ? "noopener noreferrer" : undefined
-            }
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
-              padding: "0.6rem 1.4rem",
+              padding: "0.75rem 1.5rem",
               border: "1px solid #333",
               borderRadius: "8px",
               color: "#f5f5f5",
               textDecoration: "none",
               fontSize: "0.95rem",
+              textAlign: "center",
               transition: "border-color 0.2s, background-color 0.2s",
             }}
             onMouseEnter={(e) => {
@@ -93,7 +89,20 @@ export default function Home() {
             {link.label}
           </a>
         ))}
-      </nav>
+      </div>
+
+      <div style={{ marginTop: "4rem", borderTop: "1px solid #222", paddingTop: "2rem" }}>
+        <a
+          href="/"
+          style={{
+            color: "#666",
+            textDecoration: "none",
+            fontSize: "0.85rem",
+          }}
+        >
+          ← Volver al home
+        </a>
+      </div>
     </main>
   );
 }
