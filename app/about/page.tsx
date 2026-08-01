@@ -24,14 +24,25 @@ export default function About() {
             experiencia en AWS.
           </p>
           <p>
-            Actualmente formándome en la AI Fluency track de FlyRank, explorando
-            cómo la inteligencia artificial puede integrarse en herramientas de
-            productividad y desarrollo.
+            Empecé en tecnología por una razón práctica: resolver problemas que
+            afectan a personas todos los días. Y sigo aquí porque ahora lo hago
+            con producción real detrás. En Sip Tracking mejoré la performance de
+            una SPA en +50% y habilité la gestión de cientos de miles de registros
+            logísticos en tiempo real. En Naranja X reduje incidentes críticos en
+            +50% detectando y escalando anomalías en pipelines de carga masiva.
+            Hoy, en FlyRank AI, integro LLMs en producción optimizando costos y
+            latencia por llamada.
           </p>
           <p>
             Lo que me diferencia: me importa que el código funcione en producción,
             no solo en desarrollo. Seguridad (OWASP Top 10), tests y decisiones
             técnicas defensivas son parte de cómo construyo, no un add-on.
+          </p>
+          <p>
+            Actualmente curso la Tecnicatura en Programación en la Universidad
+            Tecnológica Nacional y la AI Fluency track de FlyRank, explorando cómo
+            la inteligencia artificial puede integrarse en herramientas de
+            productividad y desarrollo.
           </p>
         </div>
 
@@ -41,12 +52,6 @@ export default function About() {
               {item}
             </span>
           ))}
-        </div>
-
-        <div className="placeholder" style={{ marginTop: "var(--space-12)" }}>
-          <div className="placeholder__label">Pendiente</div>
-          Agregar más contexto personal: por qué esta carrera, qué me motiva y algo
-          que quieras destacar de tu trayectoria.
         </div>
       </section>
     </div>

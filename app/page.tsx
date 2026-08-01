@@ -55,7 +55,10 @@ export default function Home() {
                   turnos semanales en producción
                 </span>
               </div>
-              <div>
+              <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap" }}>
+                <Button href="https://taller-el-novato.vercel.app/" variant="primary">
+                  Ver demo
+                </Button>
                 <Button href="/work">Leer el caso de estudio →</Button>
               </div>
             </div>

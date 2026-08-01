@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Button from "@/components/Button";
+
 const stack = [
   "Next.js",
   "TypeScript",
@@ -5,6 +8,29 @@ const stack = [
   "Redis (Upstash)",
   "WhatsApp Business API",
   "Node.js",
+];
+
+const screenshots = [
+  {
+    src: "/01-hero-homepage.webp",
+    alt: "Home del sistema El Novato Automotriz",
+    caption: "Home",
+  },
+  {
+    src: "/02-contact-page.webp",
+    alt: "Página de contacto del sistema",
+    caption: "Contacto",
+  },
+  {
+    src: "/03-service-page-lustrado.webp",
+    alt: "Página de servicio de lustrado",
+    caption: "Servicio",
+  },
+  {
+    src: "/04-admin-dashboard.webp",
+    alt: "Panel de administración",
+    caption: "Panel admin",
+  },
 ];
 
 const metrics = [
@@ -39,6 +65,14 @@ export default function Work() {
           Sistema de producción completo para un taller mecánico y estación de
           servicio real.
         </p>
+        <div style={{ marginTop: "var(--space-6)" }}>
+          <Button
+            href="https://taller-el-novato.vercel.app/"
+            variant="primary"
+          >
+            Ver demo en vivo
+          </Button>
+        </div>
       </section>
 
       <section className="section">
@@ -102,9 +136,22 @@ export default function Work() {
 
       <section className="section">
         <h2 className="section__title">Screenshots</h2>
-        <div className="placeholder">
-          <div className="placeholder__label">Pendiente</div>
-          Agregar screenshots del dashboard, bot de WhatsApp y sistema de reservas.
+        <div className="screenshot-grid">
+          {screenshots.map((shot) => (
+            <figure key={shot.src} className="screenshot">
+              <Image
+                src={shot.src}
+                alt={shot.alt}
+                width={1283}
+                height={647}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="screenshot__img"
+              />
+              <figcaption className="screenshot__caption">
+                {shot.caption}
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </section>
     </div>
