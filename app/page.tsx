@@ -1,99 +1,94 @@
-"use client";
+import Link from "next/link";
+import Button from "@/components/Button";
 
-const links = [
-  {
-    label: "Work",
-    href: "/work",
-  },
-  {
-    label: "About",
-    href: "/about",
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/ian-vazquez-full-stack-developer/",
-  },
-  {
-    label: "GitHub",
-    href: "https://github.com/IanVazquez-FullStack/",
-  },
-  {
-    label: "CV",
-    href: "/CV_Ian_Vazquez_2026.pdf",
-  },
-  {
-    label: "Book a Meeting",
-    href: "https://cal.com/ian-vazquez-qawvgf",
-  },
+const stats = [
+  { value: "5x", label: "turnos semanales en producción" },
+  { value: "36", label: "endpoints REST" },
+  { value: "74", label: "tests automatizados" },
+  { value: "OWASP Top 10", label: "seguridad cubierta" },
 ];
 
 export default function Home() {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "0.75rem",
-        fontFamily:
-          "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-        backgroundColor: "#0a0a0a",
-        color: "#f5f5f5",
-        textAlign: "center",
-        padding: "2rem",
-      }}
-    >
-      <h1 style={{ fontSize: "2.5rem", margin: 0, letterSpacing: "0.02em" }}>
-        Ian Vazquez
-      </h1>
-      <p style={{ fontSize: "1.1rem", color: "#a1a1a1", margin: 0 }}>
-        Full Stack / Backend Developer
-      </p>
-      <nav
-        style={{
-          display: "flex",
-          gap: "1rem",
-          marginTop: "2rem",
-          flexWrap: "wrap",
-          justifyContent: "center",
-        }}
-      >
-        {links.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            target={link.href.startsWith("http") ? "_blank" : undefined}
-            rel={
-              link.href.startsWith("http") ? "noopener noreferrer" : undefined
-            }
-            style={{
-              padding: "0.6rem 1.4rem",
-              border: "1px solid #333",
-              borderRadius: "8px",
-              color: "#f5f5f5",
-              textDecoration: "none",
-              fontSize: "0.95rem",
-              transition: "border-color 0.2s, background-color 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = "#888";
-              e.currentTarget.style.backgroundColor = "#1a1a1a";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = "#333";
-              e.currentTarget.style.backgroundColor = "transparent";
-            }}
-          >
-            {link.label}
-          </a>
-        ))}
-      </nav>
-    </main>
+    <>
+      <section className="hero">
+        <div className="container">
+          <p className="eyebrow">Ian Vazquez · Full Stack / Backend Developer</p>
+          <h1 className="hero__title">
+            Escribo código para <span className="hero__title-accent">producción</span>,
+            no para el demo.
+          </h1>
+          <p className="hero__subtitle">
+            Sistemas full-stack que aguantan tráfico real: seguridad (OWASP Top 10),
+            tests y decisiones técnicas defensivas. 2 años construyendo software que
+            funciona en producción, no solo en desarrollo.
+          </p>
+          <div className="hero__actions">
+            <Button href="https://cal.com/ian-vazquez-qawvgf" variant="primary">
+              Book a Meeting
+            </Button>
+            <Button href="/work">Ver el caso de estudio</Button>
+            <Button
+              href="https://www.linkedin.com/in/ian-vazquez-full-stack-developer/"
+              variant="ghost"
+            >
+              LinkedIn
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="card feature-card">
+            <div>
+              <p className="eyebrow">Proyecto destacado</p>
+              <h2 className="feature-card__title">El Novato Automotriz</h2>
+              <p className="feature-card__body">
+                Sistema de gestión completo para un taller mecánico real: turnos,
+                clientes, bot de WhatsApp y panel admin. De papel y WhatsApp a un
+                sistema con reservas seguras contra doble booking.
+              </p>
+              <div className="feature-card__metric">
+                5x
+                <span className="feature-card__metric-label">
+                  turnos semanales en producción
+                </span>
+              </div>
+              <div>
+                <Button href="/work">Leer el caso de estudio →</Button>
+              </div>
+            </div>
+            <div className="feature-card__meta">
+              <p style={{ color: "var(--text-muted)", fontSize: "0.85rem", margin: 0 }}>
+                El porqué:
+              </p>
+              <p
+                style={{ color: "var(--text-secondary)", fontSize: "0.95rem", lineHeight: 1.7, marginTop: "0.5rem" }}
+              >
+                Seguridad, tests y patrones defensivos aplicados en un proyecto que
+                usan personas reales todos los días.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <h2 className="section__title" style={{ marginTop: 0 }}>
+            Evidencia, no promesas
+          </h2>
+          <div className="stat-grid">
+            {stats.map((stat) => (
+              <div key={stat.label} className="stat">
+                <div className="stat__value">{stat.value}</div>
+                <div className="stat__label">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

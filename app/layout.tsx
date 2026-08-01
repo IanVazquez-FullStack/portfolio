@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
@@ -6,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s — Ian Vazquez",
   },
   description:
-    "Full Stack / Backend Developer. Production-ready systems, real security, real results.",
+    "Full Stack / Backend Developer. Sistemas de producción reales con seguridad (OWASP Top 10), tests y decisiones técnicas defensivas.",
 };
 
 export default function RootLayout({
@@ -15,8 +18,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body style={{ margin: 0 }}>{children}</body>
+    <html lang="es">
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

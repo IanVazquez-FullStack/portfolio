@@ -4,3 +4,13 @@ node_modules
 .env.local
 .vercel
 *.log
+
+# Tooling / agents / generated
+.agents
+.opencode
+_bmad
+_bmad-output
+design-artifacts
+
+# Build artifacts
+*.tsbuildinfo
