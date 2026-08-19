@@ -5,7 +5,7 @@ import { useState, FormEvent } from "react";
 // Formspree free tier: create a form at https://formspree.io (sign up with
 // the inbox you want submissions to land in), then paste the form ID it
 // gives you below. Endpoint shape: https://formspree.io/f/{form_id}
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mvkpvnzy";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
