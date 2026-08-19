@@ -36,6 +36,7 @@ export default function ContactForm() {
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (status === "submitting") return; // guard: closes the double fast-submit race
     const form = event.currentTarget;
     const formData = new FormData(form);
 
@@ -89,6 +90,7 @@ export default function ContactForm() {
           id="name"
           name="name"
           autoComplete="name"
+          maxLength={120}
           disabled={status === "submitting"}
         />
         {errors.name && <p className="form__error">{errors.name}</p>}
@@ -104,6 +106,7 @@ export default function ContactForm() {
           id="email"
           name="email"
           autoComplete="email"
+          maxLength={254}
           disabled={status === "submitting"}
         />
         {errors.email && <p className="form__error">{errors.email}</p>}
@@ -118,6 +121,7 @@ export default function ContactForm() {
           id="message"
           name="message"
           rows={5}
+          maxLength={4000}
           disabled={status === "submitting"}
         />
         {errors.message && <p className="form__error">{errors.message}</p>}
