@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const SITE_URL = "https://portfolio-blue-three-92.vercel.app";
 const SITE_TITLE = "Ian Vazquez — Full Stack / Backend Developer";
@@ -53,6 +54,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
